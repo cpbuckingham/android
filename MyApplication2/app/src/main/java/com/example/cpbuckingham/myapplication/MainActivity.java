@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //first to log, as its creating
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onStart() {
+        //starting application
         super.onStart();
         Log.i(TAG, "onStart");
         }
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
+        //the user is now looking at this screen
         super.onResume();
         Log.i(TAG, "onResume");
         }
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onPause() {
+        //paused
         super.onPause();
         Log.i(TAG, "onPause");
         }
@@ -49,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onStop() {
+        //suspended state
         super.onStop();
         Log.i(TAG, "onStop");
         }
