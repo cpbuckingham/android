@@ -2,4 +2,5 @@
     <string name="app_name">hamblaster</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="SignInTitle">Sign In</string>
+    <string name="SignInButtonText">Login</string>
 </resources>
