@@ -1,4 +1,4 @@
-package com.example.cpbuckingham.firstapplication;
+package com.example.cpbuckingham.myapplication;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
