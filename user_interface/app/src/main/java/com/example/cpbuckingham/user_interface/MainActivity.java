@@ -9,10 +9,9 @@ package com.example.cpbuckingham.user_interface;
         import android.widget.Button;
         //button usage
         import android.graphics.Color;
+        // color usage
         import android.widget.EditText;
         // allows for input
-        import java.util.concurrent.locks.ReentrantReadWriteLock;
-        // color usage
 
 public class MainActivity extends ActionBarActivity {
 
@@ -39,9 +38,21 @@ public class MainActivity extends ActionBarActivity {
                         RelativeLayout.LayoutParams.WRAP_CONTENT,
                         RelativeLayout.LayoutParams.WRAP_CONTENT
                 );
+                //making a container
+                RelativeLayout.LayoutParams usernameDetails = new RelativeLayout.LayoutParams(
+                        RelativeLayout.LayoutParams.WRAP_CONTENT,
+                        RelativeLayout.LayoutParams.WRAP_CONTENT
+                );
 
+                //give rules to position widget
+                
                 buttonDetails.addRule(RelativeLayout.CENTER_HORIZONTAL);
                 buttonDetails.addRule(RelativeLayout.CENTER_VERTICAL);
+                
+                usernameDetails.addRule(RelativeLayout.ABOVE, redButton.getId());
+                usernameDetails.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                usernameDetails.setMargins(0,0,0,50);
+
 
                 //Add widget to layout(button is now a child of layout)
                 buckysLayout.addView(redButton, buttonDetails);
