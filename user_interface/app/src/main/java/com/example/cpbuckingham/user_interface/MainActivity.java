@@ -10,9 +10,9 @@ package com.example.cpbuckingham.user_interface;
         //button usage
         import android.graphics.Color;
         import android.widget.EditText;
-
+        // allows for input
         import java.util.concurrent.locks.ReentrantReadWriteLock;
-// color usage
+        // color usage
 
 public class MainActivity extends ActionBarActivity {
 
@@ -24,6 +24,16 @@ public class MainActivity extends ActionBarActivity {
                 RelativeLayout buckysLayout = new RelativeLayout(this);
                 buckysLayout.setBackgroundColor(Color.GREEN);
                 
+                 //Button
+                Button redButton = new Button(this);
+                redButton.setText("Login In");
+                redButton.setBackgroundColor(Color.RED);
+                
+                //Username input
+                EditText username = new EditText(this);
+                redButton.setId(1);
+                username.setId(2);
+                //setting IDs
 
                 RelativeLayout.LayoutParams buttonDetails = new RelativeLayout.LayoutParams(
                         RelativeLayout.LayoutParams.WRAP_CONTENT,
