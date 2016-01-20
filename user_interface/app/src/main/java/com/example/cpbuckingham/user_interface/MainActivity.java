@@ -13,49 +13,53 @@ package com.example.cpbuckingham.user_interface;
         import android.widget.EditText;
         // allows for input
 
+        //rgb - seafoam - rgb(145,231,205), pink - rgb(231,145,214), grey - rgb(189,172,178)
+        
 public class MainActivity extends ActionBarActivity {
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
 
-                //Layout
+                //Layout - grey
                 RelativeLayout buckysLayout = new RelativeLayout(this);
-                buckysLayout.setBackgroundColor(Color.GREEN);
+                Color bg = new Color(189,172,178);
+                buckysLayout.setBackgroundColor(Color.bg);
                 
-                 //Button
-                Button redButton = new Button(this);
-                redButton.setText("Login In");
-                redButton.setBackgroundColor(Color.RED);
+                 //Button - seafoam
+                Button LoginButton = new Button(this);
+                LoginButton.setText("Login In");
+                Color buttonColor = new Color(145,231,205);
+                LoginButton.setBackgroundColor(Color.buttonColor);
                 
                 //Username input
                 EditText username = new EditText(this);
-                redButton.setId(1);
+                LoginButton.setId(1);
                 username.setId(2);
                 //setting IDs
 
+                //making a container
                 RelativeLayout.LayoutParams buttonDetails = new RelativeLayout.LayoutParams(
                         RelativeLayout.LayoutParams.WRAP_CONTENT,
                         RelativeLayout.LayoutParams.WRAP_CONTENT
                 );
-                //making a container
                 RelativeLayout.LayoutParams usernameDetails = new RelativeLayout.LayoutParams(
                         RelativeLayout.LayoutParams.WRAP_CONTENT,
                         RelativeLayout.LayoutParams.WRAP_CONTENT
                 );
 
                 //give rules to position widget
-                
                 buttonDetails.addRule(RelativeLayout.CENTER_HORIZONTAL);
                 buttonDetails.addRule(RelativeLayout.CENTER_VERTICAL);
                 
-                usernameDetails.addRule(RelativeLayout.ABOVE, redButton.getId());
+                usernameDetails.addRule(RelativeLayout.ABOVE, LoginButton.getId());
                 usernameDetails.addRule(RelativeLayout.CENTER_HORIZONTAL);
                 usernameDetails.setMargins(0,0,0,50);
 
 
                 //Add widget to layout(button is now a child of layout)
-                buckysLayout.addView(redButton, buttonDetails);
+                buckysLayout.addView(LoginButton, buttonDetails);
+                buckysLayout.addView(username, usernameDetails);
 
                 //Set this activities content/display to this view
                 setContentView(buckysLayout);
