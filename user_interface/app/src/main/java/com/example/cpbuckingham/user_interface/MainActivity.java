@@ -9,6 +9,7 @@ package com.example.cpbuckingham.user_interface;
         import android.widget.Button;
         //button usage
         import android.graphics.Color;
+        import android.widget.EditText;
 
         import java.util.concurrent.locks.ReentrantReadWriteLock;
 // color usage
@@ -22,6 +23,7 @@ public class MainActivity extends ActionBarActivity {
                 //Layout
                 RelativeLayout buckysLayout = new RelativeLayout(this);
                 buckysLayout.setBackgroundColor(Color.GREEN);
+                
 
                 RelativeLayout.LayoutParams buttonDetails = new RelativeLayout.LayoutParams(
                         RelativeLayout.LayoutParams.WRAP_CONTENT,
@@ -30,11 +32,6 @@ public class MainActivity extends ActionBarActivity {
 
                 buttonDetails.addRule(RelativeLayout.CENTER_HORIZONTAL);
                 buttonDetails.addRule(RelativeLayout.CENTER_VERTICAL);
-
-                //Button
-                Button redButton = new Button(this);
-                redButton.setText("Click Me");
-                redButton.setBackgroundColor(Color.RED);
 
                 //Add widget to layout(button is now a child of layout)
                 buckysLayout.addView(redButton, buttonDetails);
