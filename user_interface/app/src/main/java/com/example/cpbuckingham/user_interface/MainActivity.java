@@ -12,6 +12,9 @@ package com.example.cpbuckingham.user_interface;
         // color usage
         import android.widget.EditText;
         // allows for input
+        import android.content.res.Resources;
+        import android.util.TypedValue;
+        //take density independent pixels and convert them to pixels (consistent on all devices)
 
         //rgb - seafoam - rgb(145,231,205), pink - rgb(231,145,214), grey - rgb(189,172,178)
         
@@ -56,6 +59,14 @@ public class MainActivity extends ActionBarActivity {
                 usernameDetails.addRule(RelativeLayout.CENTER_HORIZONTAL);
                 usernameDetails.setMargins(0,0,0,50);
 
+                Resources r = getResources();
+                //gets information from your app
+                int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 200,
+                r.getDisplayMetrics()
+                );
+                //whatever we get back we want to convert to int
+                
+                username.setWidth(px)
 
                 //Add widget to layout(button is now a child of layout)
                 buckysLayout.addView(LoginButton, buttonDetails);
