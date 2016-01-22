@@ -26,14 +26,12 @@ public class MainActivity extends ActionBarActivity {
 
                 //Layout - grey
                 RelativeLayout buckysLayout = new RelativeLayout(this);
-                Color bg = new Color(189,172,178);
-                buckysLayout.setBackgroundColor(Color.bg);
+                buckysLayout.setBackgroundColor(Color.LTGRAY);
                 
                  //Button - seafoam
                 Button LoginButton = new Button(this);
                 LoginButton.setText("Login In");
-                Color buttonColor = new Color(145,231,205);
-                LoginButton.setBackgroundColor(Color.buttonColor);
+                LoginButton.setBackgroundColor(Color.GREEN);
                 
                 //Username input
                 EditText username = new EditText(this);
@@ -66,7 +64,7 @@ public class MainActivity extends ActionBarActivity {
                 );
                 //whatever we get back we want to convert to int
                 
-                username.setWidth(px)
+                username.setWidth(px);
 
                 //Add widget to layout(button is now a child of layout)
                 buckysLayout.addView(LoginButton, buttonDetails);
