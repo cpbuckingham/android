@@ -35,6 +35,16 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
+        camsButton.setOnLongClickListener(
+                new Button.OnLongClickListener(){
+                    public  boolean onLongClick(View v){
+                        TextView camsText = (TextView)findViewById(R.id.camsText);
+                        camsText.setText("Holding Button");
+                        return true;
+                    }
+                }
+        );
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
