@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 //event handling is making something happen whenever the user
-//interacts with bottons
+//interacts with buttons
 //callback method is the code that changes things
 
 
@@ -23,6 +23,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button camsButton = (Button)findViewById(R.id.camsButton);
+
+        camsButton.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v) {
+                        TextView camsText = (TextView)findViewById(R.id.camsText);
+                        camsText.setText("Clicked");
+                    }
+                }
+        );
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
