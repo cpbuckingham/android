@@ -27,6 +27,13 @@ public class MainActivity extends AppCompatActivity implements TopSectionFragmen
             }
         });
     }
+    
+    //this gets called by the top fragment when user clicks button
+    @Override
+    public void CreateMeme(String top, String bottom){
+        
+        
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
