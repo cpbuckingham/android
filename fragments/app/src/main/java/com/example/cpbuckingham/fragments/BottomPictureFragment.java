@@ -20,4 +20,10 @@ public class BottomPictureFragment extends Fragment {
         bottomMemeText = (TextView) view.findViewById(R.id.bottomMemeText);
         return view;
     }
+    
+    public void setMemeText(String top, String bottom){
+        topMemeText.setText(top);
+        bottomMemeText.setText(bottom);
+    }
+    
 }
