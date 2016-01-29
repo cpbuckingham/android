@@ -22,7 +22,7 @@
         tools:layout="@layout/top_section_fragment" />
 
     <fragment
-        android:layout_width="400dp"
+        android:layout_width="290dp"
         android:layout_height="300dp"
         android:name="com.example.cpbuckingham.fragments.BottomPictureFragment"
         android:id="@+id/fragment2"
