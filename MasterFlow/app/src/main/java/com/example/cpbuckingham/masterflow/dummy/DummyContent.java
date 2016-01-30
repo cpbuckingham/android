@@ -40,7 +40,7 @@ public class DummyContent {
 
     private static void addItem(DummyItem item) {
         ITEMS.add(item);
-        ITEM_MAP.put(item.id, item);
+        ITEM_MAP.put(item.item_name, item);
     }
 
     private static DummyItem createDummyItem(int position) {
