@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.transition.TransitionManager;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         public void moveButton() {
             View camsButton = findViewById(R.id.camsButton);
+            TransitionManager.beginDelayedTransition(camsLayout);
             RelativeLayout.LayoutParams positionRules = new RelativeLayout.LayoutParams(
                     RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
             positionRules.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE);
