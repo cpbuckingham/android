@@ -10,6 +10,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class Apples extends AppCompatActivity {
 
@@ -17,10 +19,21 @@ public class Apples extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apples);
+
+        Bundle baconData = getIntent().getExtras();
+        if(baconData==null) {
+            return;
+        }
+        String baconMessage = baconData.getString("baconMessage");
+        final TextView applesText = (TextView) findViewById(R.id.applesText);
+        applesText.setText(baconMessage);
     }
-    
+
     public void onClick(View view){
         Intent i = new Intent(this, Bacon.class);
+        final EditText applesInput = (EditText) findViewById(R.id.applesInput);
+        String userMessage = applesInput.getText().toString();
+        i.putExtra("applesMessage", userMessage);
         startActivity(i);
     }
 

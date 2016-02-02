@@ -29,6 +29,16 @@
         android:text="Go to Apples"
         android:id="@+id/baconButton"
         android:onClick="onClick"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="83dp"
+        android:layout_below="@+id/baconInput"
         android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/baconInput"
+        android:width="250dp"
+        android:layout_below="@+id/baconText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="41dp" />
 </RelativeLayout>
