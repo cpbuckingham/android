@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.content.Intent;
 
 public class Bacon extends AppCompatActivity {
 
@@ -15,5 +16,11 @@ public class Bacon extends AppCompatActivity {
         setContentView(R.layout.activity_bacon);
 
     }
-
+    
+    public void onClick(View view){
+    Intent i = new Intent(this, Apples.class);
+    startActivity(i);
+    }
 }
+
+    
