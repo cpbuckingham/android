@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +27,18 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    public void clickCamsButton(View view){
+        Long futureTime = System.currentTimeMillis() + 10000;
+        while(System.currentTimeMillis() < futureTime){
+            synchronized (this) {
+                //syncrhonized prevents multiple threads from bumping into eachother
+                try{
+                    wait(futureTime-System.currentTimeMillis());
+                }catch(Exception e) {}
+            }
+        }
     }
 
     @Override
