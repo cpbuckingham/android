@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
                 }catch(Exception e) {}
             }
         }
+        TextView camsText = (TextView) findViewById(R.id.camsText);
+        camsText.setText("Nice");
     }
 
     @Override
