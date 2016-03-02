@@ -9,8 +9,18 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.os.Handler;
+import android.os.Message;
 
 public class MainActivity extends AppCompatActivity {
+
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg){
+            TextView camsText = (TextView) findViewById(R.id.camsText);
+            camsText.setText("Nice");
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,19 +39,31 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void clickCamsButton(View view){
-        Long futureTime = System.currentTimeMillis() + 10000;
-        while(System.currentTimeMillis() < futureTime){
-            synchronized (this) {
-                //syncrhonized prevents multiple threads from bumping into eachother
-                try{
-                    wait(futureTime-System.currentTimeMillis());
-                }catch(Exception e) {}
+    public void clickCamsButton(View view) {
+
+        Runnable r = new Runnable() {
+            @Override
+            public void run() {
+                //runnable class is essential is the code that goes inside your thread
+                Long futureTime = System.currentTimeMillis() + 10000;
+                while (System.currentTimeMillis() < futureTime) {
+                    synchronized (this) {
+                        //syncrhonized prevents multiple threads from bumping into eachother
+                        try {
+                            wait(futureTime - System.currentTimeMillis());
+                        } catch (Exception e) {
+                        }
+                    }
+                }
+                handler.sendEmptyMessage(0);
             }
-        }
-        TextView camsText = (TextView) findViewById(R.id.camsText);
-        camsText.setText("Nice");
+        };
+
+            Thread camsThread = new Thread(r);
+            camsThread.start();
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
