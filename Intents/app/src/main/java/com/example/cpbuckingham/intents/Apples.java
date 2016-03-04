@@ -29,6 +29,8 @@ public class Apples extends AppCompatActivity {
         applesText.setText(baconMessage);
         Intent intent = new Intent(this, cams_intent.class);
         startService(intent);
+        Intent i = new Intent(this, MyService.class);
+        startService(i);
     }
 
     public void onClick(View view){
