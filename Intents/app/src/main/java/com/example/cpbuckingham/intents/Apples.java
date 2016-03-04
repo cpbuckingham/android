@@ -27,6 +27,8 @@ public class Apples extends AppCompatActivity {
         String baconMessage = baconData.getString("baconMessage");
         final TextView applesText = (TextView) findViewById(R.id.applesText);
         applesText.setText(baconMessage);
+        Intent intent = new Intent(this, cams_intent.class);
+        startService(intent);
     }
 
     public void onClick(View view){
