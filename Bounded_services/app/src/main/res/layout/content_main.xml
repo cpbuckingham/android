@@ -28,5 +28,6 @@
         android:text="Get Time"
         android:id="@+id/camsButton"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="getTime" />
 </RelativeLayout>
