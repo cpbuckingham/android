@@ -8,6 +8,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.app.Activity;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.Toast;
+
 
 
 public class MainActivity extends Activity {
@@ -19,7 +26,8 @@ public class MainActivity extends Activity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        string[]= foods = {"meat", "pasta", "egg", "grapes", "tommatoes", "rice"};
+        String[] foods = {"meat", "pasta", "egg", "grapes", "tommatoes", "rice"};
+        ListAdapter camAdapter =
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
