@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.app.Activity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.Toast;
@@ -26,8 +27,10 @@ public class MainActivity extends Activity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        String[] foods = {"meat", "pasta", "egg", "grapes", "tommatoes", "rice"};
-        ListAdapter camAdapter =
+        String[] foods = {"meat", "pasta", "egg", "grapes", "tomatoes", "rice"};
+        ListAdapter camAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, foods);
+        ListView camsListView = (ListView) findViewById(R.id.camsListView);
+        camsListView.setAdapter(camAdapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
