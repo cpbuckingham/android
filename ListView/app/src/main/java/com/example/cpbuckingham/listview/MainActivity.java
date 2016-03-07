@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,16 @@ public class MainActivity extends Activity {
         ListAdapter camAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, foods);
         ListView camsListView = (ListView) findViewById(R.id.camsListView);
         camsListView.setAdapter(camAdapter);
+
+        camsListView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapaterView<?> parent, View view, int position, Long id){
+                        String food = String.valueOf(parent.getItemAtPosition(position));
+                        Toast.makeText(MainActivity.this, food, Toast.LENGTH_LONG.show());
+                    }
+                }
+        );
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

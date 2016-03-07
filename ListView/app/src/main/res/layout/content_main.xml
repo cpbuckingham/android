@@ -11,9 +11,9 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.cpbuckingham.listview.MainActivity"
     tools:showIn="@layout/activity_main"
-    android:id="@+id/camsListView"
     android:focusableInTouchMode="true">
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        android:layout_height="match_parent"
+        android:id="@+id/camsListView"></ListView>
 </RelativeLayout>
