@@ -33,9 +33,9 @@ public class MainActivity extends AppCompatActivity {
         camsListView.setAdapter(camAdapter);
 
         camsListView.setOnItemClickListener(
-                new AdapterView.OnItemClickListener() {
+                new AdapterView.OnItemClickListener(){
                     @Override
-                    public void onItemClick(AdapaterView<?> parent, View view, int position, Long id){
+                    public void onItemClick(AdapterView<?> parent, View view, int position, Long id){
                         String food = String.valueOf(parent.getItemAtPosition(position));
                         Toast.makeText(MainActivity.this, food, Toast.LENGTH_LONG.show());
                     }
