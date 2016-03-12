@@ -33,5 +33,13 @@ public class MyDBHandler extends SQLiteOpenHelper{
         onCreate(db);
     }
 
-    
+    //Add new row to the db
+    public void addProduct(Product product) {
+        ContentValues values = new ContentValues();
+        // allows you to set a bunch of diff values for columns all at once
+        values.put(COLUMN_PRODUCTNAME, product.get_productname());
+        SQLiteDatabase db = getWritableDatabase();
+        db.insert(TABLE_PRODUCTS, null, values);
+        db.close();
+    }
 }
