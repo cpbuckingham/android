@@ -42,4 +42,10 @@ public class MyDBHandler extends SQLiteOpenHelper{
         db.insert(TABLE_PRODUCTS, null, values);
         db.close();
     }
+
+    // delete product from the db
+    public void deleteProduct(String productName){
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM" + TABLE_PRODUCTS + "WHERE" + COLUMN_PRODUCTNAME + "=\"" + productName + "\";");
+    }
 }
