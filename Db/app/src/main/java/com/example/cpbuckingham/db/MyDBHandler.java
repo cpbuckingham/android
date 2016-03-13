@@ -48,4 +48,23 @@ public class MyDBHandler extends SQLiteOpenHelper{
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("DELETE FROM" + TABLE_PRODUCTS + "WHERE" + COLUMN_PRODUCTNAME + "=\"" + productName + "\";");
     }
+
+    public String databaseToString(){
+        String dbString = "";
+        SQLiteDatabase db = getWritableDatabase();
+        String query = "SELECT * FROM" + TABLE_PRODUCTS + "WHERE 1";
+
+        Cursor c = db.rawQuery(guery, null);
+        c.moveToFirst();
+        while(!c.isAfterLast()){
+            if(c.getString(c.getColumnIndex("productname"))!=null){
+                dbString += c.getString(c.getColumnIndex("productname"));
+                dbString += "\n";
+            }
+        }
+        db.close();
+        return dbString;
+
+    }
+
 }
