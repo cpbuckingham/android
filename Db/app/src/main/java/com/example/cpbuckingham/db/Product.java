@@ -3,16 +3,17 @@ package com.example.cpbuckingham.db;
 /**
  * Created by cpbuckingham on 3/9/16.
  */
-public class Products {
+//Each row in the database can be represented by an object
+//Columns will represent the objects properties
+public class Product {
 
     private int _id;
     private String _productname;
 
-    public Products(){
-
+    public Product(){
     }
 
-    public Products(String productname) {
+    public Product(String productname){
         this._productname = productname;
     }
 
@@ -31,4 +32,5 @@ public class Products {
     public String get_productname() {
         return _productname;
     }
+
 }
