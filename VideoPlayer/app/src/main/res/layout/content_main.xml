@@ -8,8 +8,8 @@
     tools:context="com.example.cpbuckingham.videoplayer.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
+    <VideoView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:id="@+id/camsVideo" />
 </RelativeLayout>
