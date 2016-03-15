@@ -1,6 +1,7 @@
 package com.example.cpbuckingham.videoplayer;
 
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
         camsVideoView.setVideoPath("https://www.thenewboston.com/forum/project_files/006_testVideo.mp4");
 
         camsVideoView.start();
+
+        MediaController mediaController = new MediaController(this);
+        mediaController.setAnchorView(camsVideoView);
+        camsVideoView.setMediaController(mediaController);
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
