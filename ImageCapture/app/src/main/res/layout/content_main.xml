@@ -12,8 +12,23 @@
     tools:context="com.example.cpbuckingham.imagecapture.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Take Photo"
+        android:id="@+id/camsButton"
+        android:onClick="launchCamera"
+        android:layout_below="@+id/camsImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/camsImage"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:minHeight="300dp"
+        android:minWidth="300dp" />
 </RelativeLayout>
