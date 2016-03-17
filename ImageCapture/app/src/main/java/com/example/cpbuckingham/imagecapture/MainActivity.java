@@ -54,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
         return getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_ANY);
     }
 
-
+    public void launchCamera(View view){
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
+    }
 
 }
