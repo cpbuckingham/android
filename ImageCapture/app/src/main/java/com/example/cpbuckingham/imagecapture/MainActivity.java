@@ -1,6 +1,9 @@
 package com.example.cpbuckingham.imagecapture;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -30,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
         camsImage = (ImageView) findViewById(R.id.camsImage);
 
         //disable the button if user has no camera
+        if(!hasCamera())
+            camsButton.setEnabled(false);
+
+
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -40,5 +47,13 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
     }
+    private boolean hasCamera(){
+        return getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_ANY);
+    }
+
+
+
 }
