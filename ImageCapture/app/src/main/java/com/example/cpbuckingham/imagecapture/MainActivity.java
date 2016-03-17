@@ -13,6 +13,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.Button;
+import android.graphics.Bitmap;
+
+import java.util.BitSet;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -59,4 +62,13 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK){
+            Bundle extras = data.getExtras();
+            Bitmap photo = (Bitmap) extras.get("data");
+            camsImage.setImageBitmap(photo);
+        }
+
+    }
 }
