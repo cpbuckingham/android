@@ -24,7 +24,7 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView camImage
+    ImageView camImage;
     Drawable camsFace;
     Bitmap bitmapImage;
 
@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         camsFace = getResources().getDrawable(R.drawable.bucky);
         bitmapImage = ((BitmapDrawable) camsFace).getBitmap();
         Bitmap newPhoto = invertImage (bitmapImage);
+        camImage.setImageBitmap(newPhoto);
 
 
 
