@@ -51,27 +51,27 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
     }
+    public static Bitmap invertImage(Bitmap original){
+        Bitmap finalImage = Bitmap.createBitmap(original.getWidth(), original.getHeight(), original.getConfig());
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+        int A, R, G, B;
+        int pixelColor;
+        int height = original.getHeight();
+        int width = original.getWidth();
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        for (int y = 0; y < height; y++){
+            for(int x = 0; x < width; x++){
+                pixelColor = original.getPixel(x,y);
+                A = Color.alpha(pixelColor);
+                R = 255 - Color.red(pixelColor);
+                G = 255 - Color.green(pixelColor);
+                B = 225 - Color.blue(pixelColor);
+                finalImage.setPixel(x,y,Color.argb(A,R,G,B));
+            }
         }
-
-        return super.onOptionsItemSelected(item);
+        return finalImage;
     }
 }
