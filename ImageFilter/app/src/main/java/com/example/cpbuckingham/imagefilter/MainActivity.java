@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        camImage = (ImageView) findViewById(R.id.camsImage);
+        camImage = (ImageView) findViewById(R.id.camsImage);
 //        camsFace = getResources().getDrawable(R.drawable.bucky);
 //        bitmapImage = ((BitmapDrawable) camsFace).getBitmap();
 //        Bitmap newPhoto = invertImage (bitmapImage);
