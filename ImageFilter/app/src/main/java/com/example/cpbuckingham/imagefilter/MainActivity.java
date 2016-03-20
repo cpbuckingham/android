@@ -35,13 +35,17 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        camImage = (ImageView) findViewById(R.id.camsImage);
-        camsFace = getResources().getDrawable(R.drawable.bucky);
-        bitmapImage = ((BitmapDrawable) camsFace).getBitmap();
-        Bitmap newPhoto = invertImage (bitmapImage);
-        camImage.setImageBitmap(newPhoto);
+//        camImage = (ImageView) findViewById(R.id.camsImage);
+//        camsFace = getResources().getDrawable(R.drawable.bucky);
+//        bitmapImage = ((BitmapDrawable) camsFace).getBitmap();
+//        Bitmap newPhoto = invertImage (bitmapImage);
+//        camImage.setImageBitmap(newPhoto);
 
-
+        Drawable[] layers = new Drawable[2];
+        layers[0] = getResources().getDrawable(R.drawable.bucky);
+        layers[1] = getResources().getDrawable(R.drawable.filter);
+        LayerDrawable layerDrawable = new LayerDrawable(layers);
+        camImage.setImageDrawable(layerDrawable);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
