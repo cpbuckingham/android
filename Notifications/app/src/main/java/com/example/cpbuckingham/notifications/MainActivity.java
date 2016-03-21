@@ -39,4 +39,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void camsButtonClicked(View view){
+        notification.setSmallIcon(R.drawable.ic_launcher);
+        notification.setTicker("Ticker");
+        notification.setWhen(System.currentTimeMillis());
+        notification.setContentTitle("Title");
+        notification.setContentText("Text");
+
+        Intent intent = new Intent(this, MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        notification.setContentIntent(pendingIntent);
+
+        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        nm.notify(uniqueID, notification.build());
+
+    }
 }
