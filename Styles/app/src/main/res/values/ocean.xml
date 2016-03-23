@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="babyBlue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#EFEFEF</item>
+        <item name="android:background">#006699</item>
+    </style>
+    <style name="babyBlue.red">
+        <item name="android:textSize">30sp</item>
+    </style>
+    <style name="yellow">
+        <item name="android:textColor">#EFEFEF</item>
+        <item name="android:background">#cc0</item>
+    </style>
+</resources>
