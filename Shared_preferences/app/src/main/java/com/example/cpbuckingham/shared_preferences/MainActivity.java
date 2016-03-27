@@ -1,5 +1,7 @@
 package com.example.cpbuckingham.shared_preferences;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,4 +39,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    //save the users login info
+    public void saveInfo(View view){
+        SharedPreferences sharedPref = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("username", usernameInput.getText().toString());
+        editor.putString("password", passwordInput.getText().toString());
+        editor.apply();
+
+        Toast.makeText(this, "Saved", Toast.LENGTH_LONG).show();
+    }
+
+    //print out the saved data
+    public void displayInfo(View view){
+        SharedPreferences sharedPref = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+
+        String name = sharedPref.getString("username", "");
+        String pw = sharedPref.getString("password", "");
+        camsText.setText(name+" "+pw);
+
+    }
+
 }

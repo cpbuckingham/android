@@ -77,5 +77,6 @@
         android:id="@+id/camsText"
         android:layout_below="@+id/saveButton"
         android:layout_toEndOf="@+id/saveButton"
-        android:layout_marginTop="43dp" />
+        android:layout_marginTop="43dp"
+        android:visibility="visible" />
 </RelativeLayout>
